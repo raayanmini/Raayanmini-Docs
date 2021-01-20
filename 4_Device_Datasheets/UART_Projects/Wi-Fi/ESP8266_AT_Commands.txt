@@ -1,0 +1,104 @@
+ 
+ Vcc is a separate regulated 3.3V supply with at least 500mA
+ /------------------------------\
+ |              chip      1   8 |
+ | Ant                    2   7 |
+ | enna       processor   3   6 |
+ |                        4   5 |
+ \------------------------------/ 
+ESP8266    TM4C123 
+  1 URxD    PD6   UART out of TM4C123, 115200 baud
+  2 GPIO0         +3.3V for normal operation (ground to flash)
+  3 GPIO2         +3.3V
+  4 GND     Gnd   GND (500mA)
+  5 UTxD    PD7   UART out of ESP8266, 115200 baud
+  6 Ch_PD         chip select, 10k resistor to 3.3V
+  7 Reset   PA4   TM4C123 can issue output low to cause hardware reset
+  8 Vcc           regulated 3.3V supply with at least 500mA
+
+  
+ESP8266 Initalization:
+---------------------
+basic communication
+"AT\r\n"
+search string is "OK"
+Step1: ESP8266 Reset
+---------------------
+    GPIO_PORTA_DATA_R &= ~0x10; // reset low - PA4
+    DelayMs(10);
+    GPIO_PORTA_DATA_R |= 0x10; // reset high
+    UART2_OutString("AT+RST\r\n");
+	
+	Search String is  "ready".
+	
+Step2: ESP8266_SetWifiMode
+---------------------------
+	UART2_OutString("AT+CWMODE=3\r\n") 
+	Search String is  "OK".
+
+Step3: ESP8266_JoinAccessPoint
+------------------------------
+UART2_OutString("AT+CWJAP="KernelMasters","9963111084"\r\n")
+	Search String is  "OK".
+	
+Step4: ESP8266_GetIPAddress
+-----------------------------
+UART2_OutString("AT+CIFSR\r\n");
+	Search String is  "OK".
+
+Step5: ESP8266_SetConnectionMux
+------------------------
+UART2_OutString("AT+CIPMUX=0\r\n");
+	Search String is  "OK".
+
+Step6: ESP8266_ListAccessPoints
+------------------------
+UART2_OutString("AT+CWLAP\r\n");
+	Search String is  "OK".
+	
+Step7: ESP8266_SetDataTransmissionMode
+-------------------------------
+UART2_OutString("AT+CIPMODE=0\r\n");
+		Search String is  "OK".
+		
+Infinite Loop:
+--------------
+While(1)
+{
+Step1: ESP8266_GetStatus
+------------------------
+UART2_OutString("AT+CIPSTATUS\r\n");
+Search String is  "OK".
+
+Step2: ESP8266_MakeTCPConnection
+--------------------------------
+UART2_OutString(AT+CIPSTART="TCP","142.93.218.33",80\r\n");
+Search String is  "OK".
+
+Step3: ESP8266_SendTcp
+----------------------
+printf("GET /page.php?temp=%f&hum=%f&dev=1\r\n\r\n", temp,hum);
+
+GET /page.php?temp=%f&hum=%f&dev=1\r\n\r\n", temp,hum
+
+GET /api/v1/u8c0NwXEW0RsceZV3LjB/rpc
+
+http://192.168.1.11/light1on?_
+
+
+sprintf(Fetch,"GET /page.php?temp=%f&hum=%f&dev=1\r\n\r\n", temp,hum);
+UART2_OutString("AT+CIPSEND=%d\r\n",sizeof(Fetch)");
+DelayMs(500);
+UART2_OutString(Fetch);
+DelayMs(4000);
+
+Step4: ESP8266_CloseTCPConnection
+--------------------------
+UART2_OutString("AT+CIPCLOSE\r\n");
+DelayMs(4000);
+Search String is  "OK".
+
+}
+	
+	
+	
