@@ -1,6 +1,6 @@
 # Raayanmini-Docs
 
-Official documentation repository for the **Raayan Mini STM32 Development Board**, maintained by the **raayanmini** organization (Kernel Masters Embedded Systems Training Institute).
+Official documentation repository for the **Raayan Mini STM32 Development Board**, maintained by the **Kernel Masters** organization.
 
 This repo aggregates **user manuals, reference manuals, and device datasheets** required to work with the Raayan Mini board in training and project environments.
 
@@ -46,7 +46,7 @@ These documents are used throughout Kernel Masters’ lab sessions, example proj
 
 Before any custom firmware is flashed, **every student / user must validate their board** using the official test image and procedure:
 
-1. Kernel Masters pre-loads a **self-diagnostic test image** on each Raayan Mini before shipping. :contentReference[oaicite:5]{index=5}  
+1. Kernel Masters pre-loads a **self-diagnostic test image** on each Raayan Mini before shipping.  
 2. Once you receive the board:
    - Follow the step-by-step test procedure shown in the official test video / manual.
    - Verify all peripherals (LEDs, switches, LCD/TFT, UART, I²C devices, etc.) as instructed.
@@ -89,7 +89,7 @@ Typical use cases for learners and developers:
 Raayan Mini and this documentation repository are part of Kernel Masters’ **industry-oriented embedded systems training**:
 
 - Focus on **bare-metal C, STM32 HAL, and register-level understanding**.
-- Progressive learning: from simple GPIO experiments to complex protocols (UART, I²C, SPI, CAN) and application-level projects. :contentReference[oaicite:10]{index=10}  
+- Progressive learning: from simple GPIO experiments to complex protocols (UART, I²C, SPI, CAN) and application-level projects. 
 - Used in real project repositories like:
   - **Biometric Attendance System**
   - **Industrial CAN IoT Gateway**
