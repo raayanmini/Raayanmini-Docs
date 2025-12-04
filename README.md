@@ -1,15 +1,15 @@
 # Raayanmini-Docs
 
-Official documentation repository for the **Raayan Mini STM32 Development Board**, maintained by the **raayanmini** organization (Kernel Masters Embedded Systems Training Institute). :contentReference[oaicite:0]{index=0}  
+Official documentation repository for the **Raayan Mini STM32 Development Board**, maintained by the **raayanmini** organization (Kernel Masters Embedded Systems Training Institute).
 
 This repo aggregates **user manuals, reference manuals, and device datasheets** required to work with the Raayan Mini board in training and project environments.
 
 
 ## About Raayan Mini & Kernel Masters
 
-**Raayan Mini** is an STM32-based industrial training board designed by **Kernel Masters** to bridge the gap between academic lab kits and real-world embedded systems work. It is used in their 6-month, hardware-centric embedded training programs. :contentReference[oaicite:1]{index=1}  
+**Raayan Mini** is an STM32-based industrial training board designed by **Kernel Masters** to bridge the gap between academic lab kits and real-world embedded systems work. It is used in their 6-month, hardware-centric embedded training programs.
 
-Key hardware highlights (STM32F401RBT6): :contentReference[oaicite:2]{index=2}  
+Key hardware highlights (STM32F401RBT6):
 
 - **MCU:** STM32F401RBT6 (ARM Cortex-M4, 32-bit, with FPU)  
 - **Clock:** up to **84 MHz**  
@@ -25,7 +25,7 @@ Key hardware highlights (STM32F401RBT6): :contentReference[oaicite:2]{index=2}
 
 ## Repository Contents
 
-The repository is organized into four main documentation folders: :contentReference[oaicite:3]{index=3}  
+The repository is organized into four main documentation folders: 
 
 - `1_ARM_CoretxM4_Manuals`  
   - ARM Cortex-M4 architecture, core programming, and reference manuals.
@@ -39,7 +39,7 @@ The repository is organized into four main documentation folders: :contentRefere
 - `4_Device_Datasheets`  
   - Datasheets for on-board and supported external devices (sensors, memories, communication modules, etc.).
 
-These documents are used throughout Kernel Masters’ lab sessions, example projects, and coursework that target the Raayan Mini ecosystem (see related code repositories like `stm32examples`, `raayanmini-4.0-4.1`, and `Raayanmini-Projects`). :contentReference[oaicite:4]{index=4}  
+These documents are used throughout Kernel Masters’ lab sessions, example projects, and coursework that target the Raayan Mini ecosystem (see related code repositories like `stm32examples`, `raayanmini-4.0-4.1`, and `Raayanmini-Projects`).
 
 
 ## Board Testing Policy (Important)
@@ -68,7 +68,7 @@ This policy is to ensure that hardware problems are caught early and separated f
 Typical use cases for learners and developers:
 
 - **Getting started with the board**
-  - Open `3_RaayanMini_Manuals` and start with the latest **Raayan Mini User Manual** (e.g., Rev 4.0/4.1). :contentReference[oaicite:6]{index=6}  
+  - Open `3_RaayanMini_Manuals` and start with the latest **Raayan Mini User Manual** (e.g., Rev 4.0/4.1).  
   - Follow the “Kit Contents” and “Getting Started” sections to power on and run the preloaded test firmware.
 
 - **Studying the MCU & architecture**
@@ -93,7 +93,7 @@ Raayan Mini and this documentation repository are part of Kernel Masters’ **in
 - Used in real project repositories like:
   - **Biometric Attendance System**
   - **Industrial CAN IoT Gateway**
-  - **Smart Weather Monitoring System** :contentReference[oaicite:11]{index=11}  
+  - **Smart Weather Monitoring System**  
 
 If you are a student in the program, this repository is your **single source of truth** for manuals and datasheets used in class and lab work.
 
@@ -106,23 +106,18 @@ This repo is primarily a **documentation hub**, not an open source codebase:
 - External pull requests are welcome for:
   - Fixing typos in filenames or structure.
   - Adding links to updated official manuals or datasheets (where permitted).
-- For board-related issues (hardware faults, missing manuals, etc.), please contact **Kernel Masters support** through the standard channels listed on their website rather than opening a GitHub issue. :contentReference[oaicite:12]{index=12}  
+- For board-related issues (hardware faults, missing manuals, etc.), please contact **Kernel Masters support** through the standard channels listed on their website rather than opening a GitHub issue.  
 
----
 
 ## License & Usage
 
-- **No explicit open-source license is declared** in this repository at the time of writing. :contentReference[oaicite:13]{index=13}  
+- **No explicit open-source license is declared** in this repository at the time of writing.  
 - Assume that:
   - PDFs and manuals belong to their respective copyright holders (ARM, STMicroelectronics, device vendors, and Kernel Masters).
   - Documents are provided for **educational and training use** with the Raayan Mini board.
 - If you want to reuse or redistribute any content outside of this context, please:
   - Check the license terms inside each PDF/manual and, when in doubt,
   - Contact Kernel Masters / raayanmini for permission.
-
----
-
-
 
 
 
